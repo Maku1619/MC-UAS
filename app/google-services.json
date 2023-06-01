@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "898692710670",
+    "project_id": "uasmc-e72db",
+    "storage_bucket": "uasmc-e72db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898692710670:android:5b276fe065600a2adf175f",
+        "android_client_info": {
+          "package_name": "ti_20411041.mc.mc5markus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2rJMHOxqTl3Rh17Nt40FicNnaL3CZhOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,8 +3,10 @@ package ti_20411041.mc.mc5markus
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +20,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_main)
+
+        val  keluar = findViewById<ImageView>(R.id.logout)
+        keluar.setOnClickListener {
+            logout()
+        }
+
+        val kembali = findViewById<ImageView>(R.id.back)
+        kembali.setOnClickListener {
+            val  intent =  Intent(this, Utama::class.java)
+            startActivity(intent)
+        }
 
         ZooList = ArrayList()
 
@@ -60,4 +73,18 @@ class MainActivity : AppCompatActivity() {
         )
         ZooList.add(zoo)
     }
+
+    //    Function signOut dari akun dan berpindah halaman dengan memangggil function navigateToLoginPage
+    private fun logout() {
+        FirebaseAuth.getInstance().signOut()
+        navigateToLoginPage()
+    }
+
+    //    Function untuk berpindah halaman
+    private fun navigateToLoginPage() {
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
+       }
 }
